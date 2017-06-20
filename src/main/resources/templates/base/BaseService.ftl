@@ -15,7 +15,6 @@ public interface BaseService<T extends BaseModel> {
 	 * 保存业务对象
 	 * 
 	 * @param model
-	 * @throws Exception
 	 */
 	void save(T model);
 
@@ -24,7 +23,6 @@ public interface BaseService<T extends BaseModel> {
 	 * 
 	 * @param list
 	 * @return
-	 * @throws Exception
 	 */
 	int saveBatch(List<T> list);
 
