@@ -57,4 +57,12 @@ public interface BaseService<T extends BaseModel> {
 	 * @return
 	 */
 	int update(T model);
+	/**
+	 * 分页查询
+	 * @param map
+	 * @param pageNo
+	 * @param pageSize
+	 * @return
+	 */
+	Page<T> queryPageByParmas(Map<String, Object> map, int pageNo, int pageSize);
 }

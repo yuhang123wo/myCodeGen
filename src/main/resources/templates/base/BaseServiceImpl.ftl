@@ -53,4 +53,17 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
 	public int update(T model){
 	 return this.getDao().update(model);
 	}
+	
+	@Override
+	public Page<T> queryPageByParmas(Map<String, Object> map, int pageNo, int pageSize) {
+		PageRequest pageRequest = new PageRequest(pageNo - 1, pageSize);
+		if (map == null) {
+			map = new HashMap<String, Object>();
+		}
+		map.put("start", pageRequest.getOffset());
+		map.put("size", pageSize);
+		int count = this.getDao().countByParmas(map);
+		List<T> list = this.getDao().queryByParmas(map);
+		return new PageImpl<T>(list, pageRequest, count);
+	}
 }
