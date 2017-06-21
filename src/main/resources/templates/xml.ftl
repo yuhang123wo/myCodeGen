@@ -55,14 +55,14 @@
     </select>
 
     <select id="queryByParmas" parameterType="map" resultMap="${beanName}Map">
-      select  <include refid="sql${beanName}"/> FROM ${tableName} where <include refid="where${beanName}"/>
+      select  <include refid="sql${beanName}"/> FROM ${tableName} <include refid="where${beanName}"/>
         <if test="start!=null and size!=null">
 	        limit <@mapperEl "start"/>,<@mapperEl "size"/>
         </if>
     </select>
     
     <select id="countByParmas"  parameterType="map" resultType="int">
-      select  count(1) FROM ${tableName} where <include refid="where${beanName}"/>
+      select  count(1) FROM ${tableName} <include refid="where${beanName}"/>
     </select>
     
    <update id="update">
