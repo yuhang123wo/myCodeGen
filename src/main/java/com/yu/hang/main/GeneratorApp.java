@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,7 +59,17 @@ public class GeneratorApp {
 	private List<TableInfo> getTableInfos(Config conf) throws ClassNotFoundException, SQLException {
 		Connection connection = DbUtils.getInstance().getConnection();
 		DatabaseMetaData metaData = DbUtils.getInstance().getMetaData(connection);
-		List<String> tableNames = Arrays.asList(conf.getTables().split(","));
+		List<String> tableNames =  new ArrayList<String>();////Arrays.asList(conf.getTables().split(","));
+//		tableNames.add("s_order_info");
+//		tableNames.add("s_order_item");
+//		tableNames.add("s_order_log");
+//		tableNames.add("s_product");
+//		tableNames.add("s_product_sku");
+//		tableNames.add("s_recv_info");
+//		tableNames.add("payment_consume");
+//		tableNames.add("best_product");
+//		tableNames.add("best_stock_log");
+     	tableNames.add("take_order_statis");
 		return DbUtils.getInstance().getAllTables(metaData, tableNames);
 	}
 	

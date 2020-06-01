@@ -22,7 +22,7 @@ public class ${table.beanName}<#if pk_field=="id"> extends Entity</#if> {
 <#if pk_field=="id">	private static final long serialVersionUID = 1L;</#if>
 <#list fieldInfos as fieldInfo>
     <#if fieldInfo.beanName!="id">
-    @Column(name= "${fieldInfo.columnName}")
+     
     private ${fieldInfo.beanType} ${fieldInfo.beanName};<#if (fieldInfo.columnRemarks)!=""> // ${fieldInfo.columnRemarks}</#if></#if>
 </#list>
 
@@ -38,4 +38,5 @@ public class ${table.beanName}<#if pk_field=="id"> extends Entity</#if> {
     
 </#if>
 </#list>
+ 
 }

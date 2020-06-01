@@ -1,20 +1,20 @@
 [{
-		"name":"webSite",
+		"name":"dropshipping",
 		"isDefault":1,
 		"config":{
 			"base":"base",
 			"databaseName":"jeeWeb",
-			"basePackage":"com.yu.hang.core",
+			"basePackage":"com.go2.shipping.core",
 			"beanPackage":"domain",
 			"daoPackage":"dao",
 			"mapperPackage":"dao",
 			"servicePackage":"service",
 			"controllerPackage":"controller",
-			"entityPackage":"import com.yu.hang.entity.Entity;",
+			"entityPackage":"import com.go2.shipping.core.domain.Entity;",
 			"enumPackage":"import com.yu.hang.core.enums.",
 			"tables":"all",
 			"needModules":"baseModel,baseDao,baseService,BaseServiceImpl,bean,mapper,xml,service,impl",
-			"path":"D:\\\\autoCode\\\\webSite",
+			"path":"D:\\\\autoCode\\\\dropshipping",
 			"driver":"com.mysql.jdbc.Driver"
 		}
 	},{
